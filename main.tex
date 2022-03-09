@@ -104,7 +104,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Stacked download statistics for Scikit-HEP and related projects}
+\begin{frame}{Stacked download statistics for Scikit-HEP and related packages}
 \begin{columns}
 \column{1.15\linewidth}
 \includegraphics[width=\linewidth]{pip-allos-scikithep-log.pdf}
@@ -122,12 +122,12 @@
 \uncover<2->{\Large\hfill Sought user input in focus groups, interviews, and surveys.}
 \end{frame}
 
-\begin{frame}{Small, interoperable Python tools are making a big impact}
+\begin{frame}{What I learned: now is the time to make HEP ``Pythonic''}
 \vspace{0.22 cm}
 \centering \only<1>{\includegraphics[width=0.92\linewidth]{hllhc-python-timeline-cloud-1.pdf}}\only<2>{\includegraphics[width=0.92\linewidth]{hllhc-python-timeline-cloud-2.pdf}}
 \end{frame}
 
-\begin{frame}{Why Python?}
+\begin{frame}{Why Python? Why now?}
 \large
 \vspace{0.25 cm}
 \textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}Python is currently leading every ``most popular programming language'' index}
@@ -169,7 +169,7 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{Why Python?}
+\begin{frame}{Why Python? Why now?}
 \large
 \vspace{0.25 cm}
 \textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}Especially in data analysis (below: coincidence of search terms in Google Trends)}
@@ -180,7 +180,7 @@
 
 \begin{frame}{Python has also been relevant in HEP {\it for 20 years}}
 \vspace{0.25 cm}
-\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}Programming languages mentioned in CHEP \uncover<2->{and ACAT}}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}Programming languages mentioned in CHEP \uncover<2->{and ACAT (this one is not as clear)}}
 
 \vspace{-0.03 cm}
 \begin{columns}
@@ -213,7 +213,24 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{columns}
 \end{frame}
 
-\begin{frame}{But it is increasingly being used in analysis}
+\begin{frame}{How is Python being used by physicists?}
+\vspace{0.5 cm}
+{\Large Analyze code in 11\,635 GitHub repos written by 2\,172 physicists:}
+
+\vspace{0.25 cm}
+\begin{enumerate}
+\item Ask GitHub which users forked CMSSW and call them ``CMS physicists.'' (CMSSW has been on GitHub for a long enough time to see trends.)
+\item Clone all of the physicists' repos (the ones that are not forks of something else).
+\item Search the code of these repos and count matches.
+\item Take care to exclude CMSSW configuration files, which are also Python.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.5\linewidth]{github-api-website.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{How is Python being used by physicists?}
 \vspace{0.25 cm}
 \textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}\only<1>{Number of non-fork GitHub repos created by CMS physicists (users who forked CMSSW)}\only<2>{Same sample, now counting regex matches for \mintinline{python}{import XYZ}, \mintinline{python}{from XYZ import}, etc.}}
 
@@ -224,25 +241,47 @@ Note: PyROOT introduced in 2004 (v4.00/04).
 \end{columns}
 \end{frame}
 
+\begin{frame}{\mbox{ }}
+\large
+\begin{itemize}\setlength{\itemsep}{0.25 cm}
+\item<1-> Python has been slowly growing in HEP for 20 years (unlike the ``big bang'' when C++ replaced Fortran).
+\item<2-> But physicists started using the SciPy ecosystem (NumPy, Matplotlib, Pandas, etc.) about 5~years ago.
+\item<3-> Scikit-HEP also started 5~years ago, just in time to serve this need.
+\item<4-> C++, ROOT, and CMSSW (in CMS) have been {\it steady}, while Python and the SciPy ecosystem have been {\it rising}.
+\end{itemize}
+\end{frame}
 
+\begin{frame}{PyHEP 2020 survey respondents ($N=406$): same picture}
+\vspace{0.2 cm}
+\begin{columns}
+\column{1.15\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{pyhep2020-survey-1.pdf}}\only<2>{\includegraphics[width=\linewidth]{pyhep2020-survey-2.pdf}}\only<3>{\includegraphics[width=\linewidth]{pyhep2020-survey-3.pdf}}\only<4>{\includegraphics[width=\linewidth]{pyhep2020-survey-4.pdf}}\only<5>{\includegraphics[width=\linewidth]{pyhep2020-survey-5.pdf}}
+\end{columns}
+\end{frame}
 
+\begin{frame}{This community is also tolerant of significant API changes}
+\vspace{0.25 cm}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}PyPI download statistics of \only<1>{Uproot 3 $\to$ 4}\only<2>{Awkward Array 0 $\to$ 1}}
 
+\vspace{-0.03 cm}
+\begin{columns}
+\column{1.08\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{pip-allos-uproot-log.pdf}}\only<2>{\includegraphics[width=\linewidth]{pip-allos-awkward-log.pdf}}
+\end{columns}
+\end{frame}
 
+\begin{frame}{And we're seeing interest from outside the HEP community, too}
+\vspace{0.25 cm}
+\textcolor{darkblue}{\mbox{\hspace{-0.5 cm}}GitHub stars versus time}
 
-%% \begin{frame}{\mbox{ }}
-%% \Large
-%% \begin{center}
-%% Software for the HL-LHC is usable today: get feedback today.
+\vspace{0.25 cm}
+\begin{columns}
+\column{0.75\linewidth}
+\only<1>{\includegraphics[width=\linewidth]{irishep-as-stars-1.pdf}}\only<2>{\includegraphics[width=\linewidth]{irishep-as-stars-2.pdf}}
 
-%% \vspace{1 cm}
-%% Gives us the flexibility to follow unexpected changes in direction.
-
-%% \vspace{1 cm}
-%% Small pieces can be ``swapped out'' as we learn more.
-%% \end{center}
-%% \end{frame}
-
-
-
+\column{0.25\linewidth}
+\uncover<2->{\small\textcolor{blue}{\url{https://news.ycombinator.com/item?id=29576323}}}
+\end{columns}
+\end{frame}
 
 \end{document}
